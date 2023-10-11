@@ -7,26 +7,26 @@ function newItem() {
   if (inputValue === "") {
     alert("Please Enter a Value!");
   } else {
-    let list = $("#list");
-    list.append(li);
+    $("#list").append(li);
   }
 
-  //2.crossing an item out:
+  //2.crossing an item out
 
   function crossOut() {
     li.toggleClass("strike");
   }
 
-  //3. adding delete button "X"
+  li.on("dblclick", function crossOut() {
+    li.toggleClass("strike");
+  });
+
+  //3. adding delete button
 
   let crossOutButton = $("<button></button>");
   crossOutButton.append(document.createTextNode("X"));
   li.append(crossOutButton);
 
   crossOutButton.on("click", deleteListItem);
-
-  //3.2 adding class as 'delete' in the list
-
   function deleteListItem() {
     li.addClass("delete");
   }
