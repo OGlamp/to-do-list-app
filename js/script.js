@@ -10,6 +10,14 @@ function newItem() {
     $("#list").append(li);
   }
 
+  function submit() {
+    li.append(inputValue);
+  }
+
+  li.on("keyup", function (e) {
+    li.append(inputValue);
+  });
+
   //2.crossing an item out
 
   function crossOut() {
