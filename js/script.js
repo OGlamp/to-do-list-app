@@ -9,14 +9,21 @@ function newItem() {
   } else {
     $("#list").append(li);
   }
-
-  function submit() {
-    li.append(inputValue);
-  }
-
-  li.on("keyup", function (e) {
-    li.append(inputValue);
-  });
+  // $(document).ready(function () {
+  //   $("#input").keypress(function (e) {
+  //     if (e.which == 13) {
+  //       e.preventDefault();
+  //       $("#list").append(li);
+  //     }
+  //   });
+  // });
+  // $(document).ready(function () {
+  //   $("#input").on("keydown", function (e) {
+  //     if (e.which == 13) {
+  //       $("#list").append(li);
+  //     }
+  //   });
+  // });
 
   //2.crossing an item out
 
