@@ -1,3 +1,11 @@
+$(document).ready(function () {
+  $("#input").on("keydown", function (e) {
+    if (e.key == 13) {
+      e.preventDefault();
+      newItem();
+    }
+  });
+});
 function newItem() {
   //1.adding a new item to the list of items:
   let li = $("<li></li>");
@@ -13,13 +21,6 @@ function newItem() {
   //   $("#input").keypress(function (e) {
   //     if (e.which == 13) {
   //       e.preventDefault();
-  //       $("#list").append(li);
-  //     }
-  //   });
-  // });
-  // $(document).ready(function () {
-  //   $("#input").on("keydown", function (e) {
-  //     if (e.which == 13) {
   //       $("#list").append(li);
   //     }
   //   });
