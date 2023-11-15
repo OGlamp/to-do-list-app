@@ -1,11 +1,3 @@
-$(document).ready(function () {
-  $("#input").on("keydown", function (e) {
-    if (e.key == 13) {
-      e.preventDefault();
-      newItem();
-    }
-  });
-});
 function newItem() {
   //1.adding a new item to the list of items:
   let li = $("<li></li>");
@@ -17,14 +9,12 @@ function newItem() {
   } else {
     $("#list").append(li);
   }
-  // $(document).ready(function () {
-  //   $("#input").keypress(function (e) {
-  //     if (e.which == 13) {
-  //       e.preventDefault();
-  //       $("#list").append(li);
-  //     }
-  //   });
-  // });
+
+  $(function () {
+    $("form").submit(function () {
+      return false;
+    });
+  });
 
   //2.crossing an item out
 
@@ -49,4 +39,12 @@ function newItem() {
 
   //4. reordering the items
   $("#list").sortable();
+}
+
+function newItemOnEnter(event) {
+  var x = event.code;
+  if (x == "Enter") {
+    event.preventDefault(); // Don't submit form
+    newItem();
+  }
 }
